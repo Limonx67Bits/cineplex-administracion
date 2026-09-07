@@ -9,7 +9,11 @@ import main.java.com.pbcorporations.cineplex.administracion.model.dto.request.Re
 import main.java.com.pbcorporations.cineplex.administracion.model.pojo.Usuario;
 
 public class AuthService {
-    private final UsuarioInterface usuarioDAO = new UsuarioDAO();
+    private final UsuarioInterface usuarioDAO;
+    
+    public AuthService(UsuarioInterface usuarioDAO){
+        this.usuarioDAO = usuarioDAO;
+    }
     
     public Usuario auth(String username, String passwordIngresada){
         Usuario usuario = usuarioDAO.findByUser(username);

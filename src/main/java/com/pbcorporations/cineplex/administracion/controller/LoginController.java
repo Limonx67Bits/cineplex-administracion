@@ -2,6 +2,7 @@ package main.java.com.pbcorporations.cineplex.administracion.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -12,8 +13,8 @@ import main.java.com.pbcorporations.cineplex.administracion.model.service.AuthSe
 import main.java.com.pbcorporations.cineplex.administracion.util.SceneManager;
 
 public class LoginController implements Initializable {
-    SceneManager manager;
-    AuthService service;
+    private final SceneManager manager;
+    private final AuthService service;
     
     @FXML
     private TextField txtUsername;
@@ -30,10 +31,12 @@ public class LoginController implements Initializable {
         
     }    
     
-    public void handleLogin(){
+    @FXML
+    public void handleLogin(ActionEvent event){
         if(txtUsername.getText().trim() == null || txtUsername.getText().isEmpty()
                 || pwField.getText().trim() == null || pwField.getText().isEmpty()){
             manager.showAlertInfo("Inicio de Sesión incorrecto", "Iniciando Sesión...", "Revise los campos ingresados antes de iniciar sesión", Alert.AlertType.WARNING);
+            return;
         }
         
         Usuario usuario = service.auth(txtUsername.getText(), pwField.getText());
@@ -48,7 +51,8 @@ public class LoginController implements Initializable {
         }
     }
     
-    public void handleRegisterButton(){
+    @FXML
+    public void handleRegisterButton(ActionEvent event){
         try{
             manager.showRegisterView();
         }catch (Exception e){

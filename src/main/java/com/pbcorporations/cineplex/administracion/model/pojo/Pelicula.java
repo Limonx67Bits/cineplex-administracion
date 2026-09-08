@@ -1,7 +1,7 @@
 package main.java.com.pbcorporations.cineplex.administracion.model.pojo;
 
 public class Pelicula {
-    private int idPelicula;
+    private String idPelicula;
     private String tituloPelicula;
     private int duracionMinutos;
     private String urlPoster;
@@ -9,7 +9,7 @@ public class Pelicula {
     private int idGenero;
     private int idDirector;
 
-    public Pelicula(int idPelicula, String tituloPelicula, int duracionMinutos, String urlPoster, int idClasificacion, int idGenero, int idDirector) {
+    public Pelicula(String idPelicula, String tituloPelicula, int duracionMinutos, String urlPoster, int idClasificacion, int idGenero, int idDirector) {
         this.idPelicula = idPelicula;
         this.tituloPelicula = tituloPelicula;
         this.duracionMinutos = duracionMinutos;
@@ -19,11 +19,11 @@ public class Pelicula {
         this.idDirector = idDirector;
     }
 
-    public int getIdPelicula() {
+    public String getIdPelicula() {
         return idPelicula;
     }
 
-    public void setIdPelicula(int idPelicula) {
+    public void setIdPelicula(String idPelicula) {
         this.idPelicula = idPelicula;
     }
 

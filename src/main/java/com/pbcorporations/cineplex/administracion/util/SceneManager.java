@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import main.java.com.pbcorporations.cineplex.administracion.controller.DashboardController;
 import main.java.com.pbcorporations.cineplex.administracion.controller.LoginController;
 import main.java.com.pbcorporations.cineplex.administracion.controller.RegisterController;
 import main.java.com.pbcorporations.cineplex.administracion.model.dao.impl.UsuarioDAO;
@@ -74,8 +75,19 @@ public class SceneManager {
 
     }
 
-    public void showDashboardView() {
-
+    public void showDashboardView() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(FXML_PATH + "dashboard-view.fxml"));
+        
+        loader.setControllerFactory(clazz -> {
+            if(clazz == DashboardController.class){
+                return new DashboardController(this);
+            }
+            try {
+                return clazz.getDeclaredConstructor().newInstance();
+            } catch (Exception e) {
+                throw new RuntimeException("Error al cargar el controlador: " + e.getMessage());
+            }
+        });
     }
 
     public void showAlertInfo(String head, String title, String content, AlertType type) {

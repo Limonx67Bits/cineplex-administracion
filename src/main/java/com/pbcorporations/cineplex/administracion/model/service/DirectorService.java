@@ -21,7 +21,7 @@ public class DirectorService {
         String nombreLimpio = request.getNombreDirector().strip();
         String apellidoLimpio = request.getApellidoDirector().strip();
 
-        Director directorTemporal = new Director(0, nombreLimpio, apellidoLimpio);
+        Director directorTemporal = new Director(nombreLimpio, apellidoLimpio);
 
         if (directorDAO.exist(directorTemporal)) {
             throw new IllegalArgumentException("Ya existe un director registrado con ese nombre.");

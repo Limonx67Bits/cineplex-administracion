@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.BorderPane;
 import main.java.com.pbcorporations.cineplex.administracion.util.SceneManager;
 
@@ -18,7 +19,7 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    
+        openPeliculasView(null);
     }
     
     public DashboardController(SceneManager manager){
@@ -27,23 +28,23 @@ public class DashboardController implements Initializable {
     
     @FXML
     private void openPeliculasView(ActionEvent event){
-        changeView("pelicula-view.fxml");
+        try{
+            Parent vistaPeliculas = manager.loadPeliculaView();
+            panelCentral.setCenter(vistaPeliculas);
+        } catch (Exception e) {
+            e.printStackTrace();
+            manager.showAlertInfo("Error", "Error en el sistema", "No se pudo cargar la vista", Alert.AlertType.ERROR);
+        }
     }
     
     @FXML
     private void openDirectoresView(ActionEvent event){
-        changeView("director-view.fxml");
-    }
-    
-    private void changeView(String pathFXML){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(pathFXML));
-            Parent nuevaVista = loader.load();
-            
-            panelCentral.setCenter(nuevaVista);
-        }catch (Exception e){
+            Parent vistaDirectores = manager.loadDirectorView();
+            panelCentral.setCenter(vistaDirectores);
+        } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Error al cargar la vista: " + pathFXML);
+            manager.showAlertInfo("Error", "Error en el sistema", "No se pudo cargar la vista", Alert.AlertType.ERROR);
         }
     }
 }

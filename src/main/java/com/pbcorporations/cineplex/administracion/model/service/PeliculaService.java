@@ -16,7 +16,10 @@ public class PeliculaService {
     }
 
     public boolean saveMovie(PeliculaDTORequest request) throws Exception {
-        if (peliculaDAO.exist(request.getTituloPelicula())) {
+        Pelicula peliculaTemporal = new Pelicula();
+        peliculaTemporal.setTituloPelicula(request.getTituloPelicula());
+
+        if (peliculaDAO.exist(peliculaTemporal)) {
             throw new Exception("El nombre de la pelicula ya se encuentra registrada");
         }
 
@@ -48,18 +51,22 @@ public class PeliculaService {
                 request.getIdGenero(),
                 request.getIdDirector()
         );
-        
+
         return peliculaDAO.update(peliculaModificada);
     }
-    
-    public List<PeliculaDTOResponse> getBillboard(){
+
+    public List<PeliculaDTOResponse> getBillboard() {
         return peliculaDAO.getAll();
     }
-    
+
     public boolean deleteMovie(String idPelicula) throws Exception {
-        if(idPelicula == null || idPelicula.isEmpty()){
+        if (idPelicula == null || idPelicula.isEmpty()) {
             throw new Exception("Seleccione una pelicula valida para eliminar");
         }
-        return peliculaDAO.delete(idPelicula);
+
+        Pelicula peliculaAEliminar = new Pelicula();
+        peliculaAEliminar.setIdPelicula(idPelicula);
+
+        return peliculaDAO.delete(peliculaAEliminar);
     }
 }

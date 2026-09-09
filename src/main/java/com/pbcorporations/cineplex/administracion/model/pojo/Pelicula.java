@@ -18,6 +18,9 @@ public class Pelicula {
         this.idGenero = idGenero;
         this.idDirector = idDirector;
     }
+    
+    public Pelicula(){
+    }
 
     public String getIdPelicula() {
         return idPelicula;

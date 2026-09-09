@@ -10,6 +10,9 @@ public class Director {
         this.nombre = nombre;
         this.apellido = apellido;
     }
+    
+    public Director(){
+    }
 
     public int getIdDirector() {
         return idDirector;

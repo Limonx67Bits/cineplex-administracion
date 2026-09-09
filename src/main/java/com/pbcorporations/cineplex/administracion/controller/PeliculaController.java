@@ -19,6 +19,7 @@ import main.java.com.pbcorporations.cineplex.administracion.model.pojo.Clasifica
 import main.java.com.pbcorporations.cineplex.administracion.model.pojo.Director;
 import main.java.com.pbcorporations.cineplex.administracion.model.pojo.Genero;
 import main.java.com.pbcorporations.cineplex.administracion.model.service.CatalogoService;
+import main.java.com.pbcorporations.cineplex.administracion.model.service.DirectorService;
 import main.java.com.pbcorporations.cineplex.administracion.model.service.PeliculaService;
 import main.java.com.pbcorporations.cineplex.administracion.util.SceneManager;
 
@@ -200,7 +201,7 @@ public class PeliculaController implements Initializable {
     public void loadCombo() {
         cbGenero.setItems(FXCollections.observableArrayList(cService.getGenresList()));
         cbClasificacion.setItems(FXCollections.observableArrayList(cService.getRatingsList()));
-        cbDirector.setItems(FXCollections.observableArrayList(dService.listarDirectores()));
+        cbDirector.setItems(FXCollections.observableArrayList(dService.getDirectorList()));
     }
     
     private void loadTablePelicula() {

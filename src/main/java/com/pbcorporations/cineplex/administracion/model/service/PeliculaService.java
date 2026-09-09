@@ -44,8 +44,8 @@ public class PeliculaService {
                 request.getTituloPelicula(),
                 request.getDuracionMinutos(),
                 request.getUrlPoster(),
-                request.getIdGenero(),
                 request.getIdClasificacion(),
+                request.getIdGenero(),
                 request.getIdDirector()
         );
         

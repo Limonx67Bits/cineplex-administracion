@@ -35,14 +35,23 @@ public class PeliculaDAO implements CrudInterface<Pelicula, PeliculaDTOResponse>
     
     @Override
     public boolean update(Pelicula pelicula){
-        String sql = "update peliculas set titulo_pelicula = ?, duracion_minutos = ?, url_poster = ? where id_pelicula = ?";
+        String sql = "update peliculas set titulo_pelicula = ?,"
+                + " duracion_minutos = ?,"
+                + " url_poster = ?, "
+                + " id_clasificacion = ?, "
+                + " id_genero = ?, "
+                + " id_director = ?"
+                + " where id_pelicula = ?";
         
         try(Connection conn = DBConnection.getConnection();
                 PreparedStatement pstm = conn.prepareStatement(sql)){
             pstm.setString(1, pelicula.getTituloPelicula());
             pstm.setInt(2, pelicula.getDuracionMinutos());
             pstm.setString(3, pelicula.getUrlPoster());
-            pstm.setString(4, pelicula.getIdPelicula());
+            pstm.setInt(4, pelicula.getIdClasificacion());
+            pstm.setInt(5, pelicula.getIdGenero());
+            pstm.setInt(6, pelicula.getIdDirector());
+            pstm.setString(7, pelicula.getIdPelicula());
             
             return pstm.executeUpdate() > 0;
         }catch (SQLException e){

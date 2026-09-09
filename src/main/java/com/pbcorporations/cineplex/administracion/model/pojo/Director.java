@@ -1,6 +1,7 @@
 package main.java.com.pbcorporations.cineplex.administracion.model.pojo;
 
 public class Director {
+
     private int idDirector;
     private String nombre;
     private String apellido;
@@ -10,8 +11,13 @@ public class Director {
         this.nombre = nombre;
         this.apellido = apellido;
     }
-    
-    public Director(){
+
+    public Director(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Director() {
     }
 
     public int getIdDirector() {
@@ -36,5 +42,10 @@ public class Director {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    @Override
+    public String toString() {
+        return this.nombre + " " + this.apellido;
     }
 }

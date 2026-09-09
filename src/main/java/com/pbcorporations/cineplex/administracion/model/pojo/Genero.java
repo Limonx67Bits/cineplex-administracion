@@ -1,6 +1,7 @@
 package main.java.com.pbcorporations.cineplex.administracion.model.pojo;
 
 public class Genero {
+
     private int idGenero;
     private String nombreGenero;
 
@@ -23,5 +24,10 @@ public class Genero {
 
     public void setNombreGenero(String nombreGenero) {
         this.nombreGenero = nombreGenero;
+    }
+
+    @Override
+    public String toString() {
+        return this.nombreGenero;
     }
 }

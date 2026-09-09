@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="main.java.com.pbcorporations.cineplex.administracion.controller.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.pbcorporations.cineplex.administracion.controller.DashboardController">
     <stylesheets>
         <URL value="@/main/resources/css/styles.css" />
     </stylesheets>
    <children>
       <BorderPane fx:id="panelCentral" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="147.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" prefHeight="380.0" prefWidth="92.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
                   <Button mnemonicParsing="false" onAction="#openPeliculasView" text="Peliculas" />
                   <Button mnemonicParsing="false" onAction="#openDirectoresView" text="Directores">

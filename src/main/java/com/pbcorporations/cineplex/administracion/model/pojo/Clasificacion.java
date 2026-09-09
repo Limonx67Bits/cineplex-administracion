@@ -1,6 +1,7 @@
 package main.java.com.pbcorporations.cineplex.administracion.model.pojo;
 
 public class Clasificacion {
+
     private int idClasificacion;
     private String codigo;
     private String descripcion;
@@ -33,5 +34,10 @@ public class Clasificacion {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    @Override
+    public String toString() {
+        return this.codigo + " - " + this.descripcion; 
     }
 }

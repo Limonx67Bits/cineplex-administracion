@@ -1,0 +1,46 @@
+.root {
+    -fx-bg-main: linear-gradient(to bottom right, #0b132b, #1c2541, #0d1b2a);
+    -fx-panel-bg: rgba(255, 255, 255, 0.12);
+    -fx-panel-border: rgba(255, 255, 255, 0.25);
+    -fx-primary-accent: #00b4d8;
+    -fx-primary-hover: #90e0ef;
+    -fx-cine-red: #d90429;
+    
+    -fx-background-color: -fx-bg-main;
+    -fx-font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.title-bar {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(15, 23, 42, 0.6) 100%);
+    -fx-border-color: transparent transparent -fx-panel-border transparent;
+    -fx-border-width: 1px;
+    -fx-padding: 5px 12px;
+    -fx-alignment: center-left;
+}
+
+.title-bar .text {
+    -fx-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, #00b4d8, 8, 0.5, 0, 0);
+}
+
+.window-button {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-padding: 2 8 2 8;
+}
+
+.window-button:hover {
+    -fx-background-color: -fx-primary-accent;
+    -fx-effect: dropshadow(gaussian, rgba(0, 180, 216, 0.8), 10, 0, 0, 0);
+}
+
+.window-button-close:hover {
+    -fx-background-color: -fx-cine-red;
+    -fx-effect: dropshadow(gaussian, rgba(217, 4, 41, 0.8), 10, 0, 0, 0);
+}

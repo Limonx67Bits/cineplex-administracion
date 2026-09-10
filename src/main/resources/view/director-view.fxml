@@ -21,29 +21,36 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
          <children>
-            <VBox alignment="TOP_CENTER" prefHeight="390.0" prefWidth="152.0" spacing="10.0">
+            <VBox alignment="TOP_CENTER" prefHeight="390.0" prefWidth="225.0" spacing="10.0" styleClass="cell" HBox.hgrow="NEVER">
                <children>
-                  <Label text="Registrar un director..." />
-                  <Label text="Nombre del Director." />
-                  <TextField fx:id="txtNombreDirector" />
-                  <Label text="Apellido del Director." />
-                  <TextField fx:id="txtApellidoDirector" />
-                  <Button mnemonicParsing="false" onAction="#handleSaveDirector" text="Agregar" />
-                  <Button mnemonicParsing="false" onAction="#handleUpdateDirector" text="Actualizar" />
-                  <Button mnemonicParsing="false" onAction="#handleRemoveDirector" text="Eliminar" />
+                  <Label styleClass="panel-title" text="Registrar un director..." />
+                  <Label styleClass="text" stylesheets="@../css/dashboard.css" text="Nombre del Director." textFill="#796e6e" />
+                  <TextField fx:id="txtNombreDirector" styleClass="text-field" />
+                  <Label stylesheets="@../css/dashboard.css" text="Apellido del Director." textFill="#796e6e" />
+                  <TextField fx:id="txtApellidoDirector" styleClass="text-field" />
+                  <Button mnemonicParsing="false" onAction="#handleSaveDirector" styleClass="button-aero" text="Agregar" />
+                  <Button mnemonicParsing="false" onAction="#handleUpdateDirector" styleClass="button-aero" text="Actualizar" />
+                  <Button mnemonicParsing="false" onAction="#handleRemoveDirector" styleClass="button-aero" text="Eliminar" />
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </VBox>
-            <TableView fx:id="tableDirectores" prefHeight="390.0" prefWidth="433.0">
+            <TableView fx:id="tableDirectores" maxWidth="1.7976931348623157E308" stylesheets="@../css/dashboard.css" HBox.hgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="columnId" prefWidth="75.0" text="ID" />
                 <TableColumn fx:id="columnNombre" prefWidth="179.0" text="Nombre" />
                   <TableColumn fx:id="columnApellido" prefWidth="178.0" text="Apellido" />
               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
          </children>
+         <stylesheets>
+            <URL value="@../css/dashboard.css" />
+            <URL value="@../css/components.css" />
+         </stylesheets>
       </HBox>
    </children>
 </AnchorPane>

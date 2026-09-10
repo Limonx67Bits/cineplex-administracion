@@ -8,50 +8,45 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="main.java.com.pbcorporations.cineplex.administracion.controller.RegisterController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.pbcorporations.cineplex.administracion.controller.RegisterController">
     <stylesheets>
         <URL value="@/main/resources/css/styles.css" />
     </stylesheets>
    <children>
-      <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="3" GridPane.rowSpan="3">
+      <BorderPane styleClass="root" stylesheets="@../css/styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox fx:id="titleBar" maxWidth="1.7976931348623157E308" prefHeight="25.0" spacing="10.0" styleClass="title-bar" stylesheets="@../css/styles.css" BorderPane.alignment="CENTER">
                <children>
-                  <VBox alignment="TOP_CENTER" layoutX="156.0" layoutY="41.0" prefHeight="319.0" prefWidth="288.0" spacing="10.0">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                     <children>
-                        <Label text="Registro" />
-                        <Label text="Ingrese su Usuario..." />
-                        <TextField fx:id="txtUsername" promptText="Username" />
-                        <Label text="Ingrese su Contraseña..." />
-                        <PasswordField fx:id="pwField" promptText="Password" />
-                        <Label text="Ingrese su ID..." />
-                        <ComboBox fx:id="cbRol" prefWidth="150.0" />
-                        <Button mnemonicParsing="false" onAction="#handleRegister" text="Registrar" />
-                        <Button mnemonicParsing="false" onAction="#handleReturnLogin" text="Regresar" />
-                     </children>
-                  </VBox>
+                  <Label text="CinePlex - Registrarse" />
+                  <Region maxWidth="1.7976931348623157E308" prefHeight="25.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnMinimizar" mnemonicParsing="false" prefHeight="5.0" prefWidth="29.0" styleClass="window-button" stylesheets="@../css/styles.css" text="-" />
+                  <Button fx:id="btnCerrar" mnemonicParsing="false" prefHeight="5.0" prefWidth="29.0" styleClass="window-button-close" stylesheets="@../css/styles.css" text="x" />
                </children>
-            </Pane>
-         </children>
-      </GridPane>
+            </HBox>
+         </top>
+         <center>
+            <VBox alignment="TOP_CENTER" maxHeight="450.0" maxWidth="380.0" prefHeight="300.0" prefWidth="350.0" spacing="10.0" styleClass="auth-card" stylesheets="@../css/auth.css">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <Label styleClass="auth-header-text" text="Registro" />
+                  <Label styleClass="auth-label" text="Ingrese su Usuario..." />
+                  <TextField fx:id="txtUsername" promptText="Username" styleClass="text-field" stylesheets="@../css/components.css" />
+                  <Label styleClass="auth-label" text="Ingrese su Contraseña..." />
+                  <PasswordField fx:id="pwField" promptText="Password" styleClass="password-field" stylesheets="@../css/components.css" />
+                  <Label styleClass="auth-label" text="Ingrese su ID..." />
+                  <ComboBox fx:id="cbRol" prefWidth="150.0" styleClass="combo-box" stylesheets="@../css/components.css" />
+                  <Button mnemonicParsing="false" onAction="#handleRegister" styleClass="button-aero" stylesheets="@../css/components.css" text="Registrar" />
+                  <Button mnemonicParsing="false" onAction="#handleReturnLogin" styleClass="button-aero" stylesheets="@../css/components.css" text="Regresar" />
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>

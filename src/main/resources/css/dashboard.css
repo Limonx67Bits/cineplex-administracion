@@ -1,0 +1,26 @@
+.side-panel {
+    -fx-background-color: rgba(15, 23, 42, 0.5);
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 15px;
+}
+
+.panel-title {
+    -fx-text-fill: #00b4d8;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255, 255, 255, 0.3);
+    -fx-border-radius: 6px;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-border-color: #00b4d8;
+}

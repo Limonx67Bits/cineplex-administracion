@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import main.java.com.pbcorporations.cineplex.administracion.controller.DashboardController;
 import main.java.com.pbcorporations.cineplex.administracion.controller.DirectorController;
@@ -47,7 +48,8 @@ public class SceneManager {
         });
 
         Parent root = loader.load();
-        Scene scene = new Scene(root, 600, 500);
+        Scene scene = new Scene(root, 800, 500);
+        scene.setFill(Color.TRANSPARENT);
         stage.setMinHeight(400);
         stage.setMinWidth(450);
         stage.setTitle("CinePlex - Iniciar Sesión");
@@ -73,7 +75,8 @@ public class SceneManager {
         });
 
         Parent root = loader.load();
-        Scene scene = new Scene(root, 600, 500);
+        Scene scene = new Scene(root, 800, 500);
+        scene.setFill(Color.TRANSPARENT);
         stage.setMinHeight(400);
         stage.setMinWidth(450);
         stage.setTitle("CinePlex - Registrarse");
@@ -98,7 +101,8 @@ public class SceneManager {
         });
 
         Parent root = loader.load();
-        Scene scene = new Scene(root, 600, 500);
+        Scene scene = new Scene(root, 800, 500);        
+        scene.setFill(Color.TRANSPARENT);
         stage.setMinHeight(400);
         stage.setMinWidth(450);
         stage.setTitle("CinePlex - Registrarse");
